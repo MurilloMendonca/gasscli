@@ -3,3 +3,4 @@ cache/*
 gasscli
 *.o
 *.txt
+PKGBUILD

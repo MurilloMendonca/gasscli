@@ -1,0 +1,3 @@
+[submodule "newGASS-base"]
+	path = newGASS-base
+	url = https://github.com/MurilloMendonca/newGASS-base

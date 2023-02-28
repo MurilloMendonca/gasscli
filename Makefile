@@ -4,6 +4,7 @@ SRC_DIR=newGASS-base
 SRCS=$(SRC_DIR)/Individuo.cpp $(SRC_DIR)/GA.cpp $(SRC_DIR)/newGASS.cpp gasscli.cpp
 OBJS=$(SRCS:.cpp=.o)
 TARGET=gasscli
+INSTALL_DIR = /usr/local/bin
 
 all: $(TARGET)
 
@@ -12,6 +13,9 @@ $(TARGET): $(OBJS)
 
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+install:
+	install -m 755 $(TARGET) $(INSTALL_DIR)
 
 clean:
 	rm -f $(TARGET) $(OBJS)

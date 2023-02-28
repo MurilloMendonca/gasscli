@@ -350,9 +350,52 @@ GASS::Parameters getDefaultParameters(){
     return param;
 }
 
-void run(site temp, Repositorio rep){
+void run(site temp, Repositorio rep, string outputFilePath){
     std::set<Individuo> results;
     GASS::runOneToOne(&temp, &rep, &results, getDefaultParameters());
+
+    ofstream ofs(outputFilePath);
+    int contador=1;
+    int tam_sitiof = temp.residuos.size();
+    int i=0;
+    for (Individuo ind:results)
+    {
+        ofs << contador << "\t" << i << "\t";
+        ofs << std::setprecision(3) << ind.getFitness() << "\t";
+        if (ind.getFitness() != 1000)
+        {
+            ofs << ind.cromossomo[0].amino << " " << ind.cromossomo[0].atomo_ID << " " << ind.cromossomo[0].cadeia;
+            for (int j = 1; j < tam_sitiof; j++)
+                ofs << ";" << ind.cromossomo[j].amino << " " << ind.cromossomo[j].atomo_ID << " " << ind.cromossomo[j].cadeia;
+            ofs << "\t" << temp.pdbId << "\t";
+            ofs << temp.residuos[0].amino << " " << temp.residuos[0].atomo_ID << " " << temp.residuos[0].cadeia;
+            for (int j = 1; j < tam_sitiof; j++)
+                ofs << ";" << temp.residuos[j].amino << " " << temp.residuos[j].atomo_ID << " " << temp.residuos[j].cadeia;
+        }
+        else
+        {
+            ofs << " - "
+                << " "
+                << " - "
+                << " "
+                << " - ";
+            for (int j = 1; j < tam_sitiof; j++)
+                ofs << ";"
+                    << " - "
+                    << " "
+                    << " - "
+                    << " "
+                    << " - ";
+            ofs << "\t" << temp.pdbId << "\t";
+            ofs << temp.residuos[0].amino << " " << temp.residuos[0].atomo_ID << " " << temp.residuos[0].cadeia;
+            for (int j = 1; j < tam_sitiof; j++)
+                ofs << ";" << temp.residuos[j].amino << " " << temp.residuos[j].atomo_ID << " " << temp.residuos[j].cadeia;
+        
+        }
+        //ofs << "\t" << ecnumber << "\t" << uniprot << "\t" << resolution << "\t" << tam_sitiof;
+        ofs << std::endl;
+        i++;
+    }
 }
 
 void readMutations(string mutations, site& temp){
@@ -414,6 +457,7 @@ int main(int argc, char* argv[]){
         ("mutations", value<string>(), "set mutations")
         ("target_pdb,t", value<string>(), "set target pdb")
         ("reference_atom", value<string>(), "set reference atom")
+        ("output,o", value<string>(), "set output file, default is output.txt")
     ;
     options_description download_opt("Allowed options");
     download_opt.add_options()
@@ -444,6 +488,7 @@ int main(int argc, char* argv[]){
         string targetPdb = "";
         string referenceAtom = "CA";
         string cacheFolder = "cache/";
+        string outputFilePath = "output.txt";
 
         variables_map vm;
         store(parse_command_line(argc, argv, run_opt), vm);
@@ -473,6 +518,9 @@ int main(int argc, char* argv[]){
         }
         if(vm.count("reference_atom")){
             referenceAtom = vm["reference_atom"].as<string>();
+        }
+        if(vm.count("output")){
+            outputFilePath = vm["output"].as<string>();
         }
 
         if(referencePdb == "" || templateSite == "" || targetPdb == ""){
@@ -507,7 +555,7 @@ int main(int argc, char* argv[]){
         repositorio.readRepository(cacheFolder+targetPdb+"/protein.dat");
 
         //printTargetInfo(repositorio);
-        run(temp,repositorio);
+        run(temp,repositorio,outputFilePath);
     }
     else if(argc>0 && string(argv[1])=="download"){
         string cacheFolder = "cache/";
