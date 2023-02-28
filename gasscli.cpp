@@ -422,6 +422,17 @@ int main(int argc, char* argv[]){
         ("pdb_list,p", value< vector<string> >()->multitoken(), "set pdb list")
         ("reference_atom", value<string>(), "set reference atom, default is CA")
         ("file_list,f", value<string>(), "set the path to a file containing a list of pdb files to download")
+        ("force", "force download even if .pdb file already exists")
+
+    ;
+    options_description prepare_opt("Allowed options");
+    prepare_opt.add_options()
+        ("help,h", "produce help message")
+        ("cache_folder,c", value<string>(), "set cache folder to add the .dat files to, default is cache/")
+        ("pdb_code,p", value<string>(), "set pdb code")
+        ("reference_atom", value<string>(), "set reference atom, default is CA")
+        ("pdb_file_path,f", value<string>(), "set the path to the .pdb file to be prepared")
+        ("force", "force prepare even if .dat file already exists")
     ;
 
     if(argc>0 && string(argv[1])=="run"){
@@ -503,6 +514,7 @@ int main(int argc, char* argv[]){
         vector<string> pdbList;
         string referenceAtom = "CA";
         string file_list = "";
+        bool force = false;
 
         variables_map vm;
         store(parse_command_line(argc, argv, download_opt), vm);
@@ -527,6 +539,9 @@ int main(int argc, char* argv[]){
         if(vm.count("file_list")){
             file_list = vm["file_list"].as<string>();
         }
+        if(vm.count("force")){
+            force = true;
+        }
 
         if(pdbList.empty() && file_list == ""){
             cout << "Missing arguments" << endl;
@@ -537,12 +552,16 @@ int main(int argc, char* argv[]){
         if(!fs::exists(cacheFolder)){
             fs::create_directory(cacheFolder);
         }
-
         if(!pdbList.empty()){
             for(string str : pdbList)
             {
                 if(!fs::exists(cacheFolder+str)){
                     fs::create_directory(cacheFolder+str);
+                    downloadPdb(str, cacheFolder+str+"/protein.pdb");
+                    generateTxt(cacheFolder+str+"/protein.pdb",cacheFolder+str+"/protein.txt",referenceAtom);
+                    generateDat(cacheFolder+str+"/protein.txt",cacheFolder+str+"/protein.dat");
+                }
+                else if(force){
                     downloadPdb(str, cacheFolder+str+"/protein.pdb");
                     generateTxt(cacheFolder+str+"/protein.pdb",cacheFolder+str+"/protein.txt",referenceAtom);
                     generateDat(cacheFolder+str+"/protein.txt",cacheFolder+str+"/protein.dat");
@@ -560,9 +579,71 @@ int main(int argc, char* argv[]){
                     generateTxt(cacheFolder+str+"/protein.pdb",cacheFolder+str+"/protein.txt",referenceAtom);
                     generateDat(cacheFolder+str+"/protein.txt",cacheFolder+str+"/protein.dat");
                 }
+                else if(force){
+                    downloadPdb(str, cacheFolder+str+"/protein.pdb");
+                    generateTxt(cacheFolder+str+"/protein.pdb",cacheFolder+str+"/protein.txt",referenceAtom);
+                    generateDat(cacheFolder+str+"/protein.txt",cacheFolder+str+"/protein.dat");
+                }
             }
         }
     }
+    else if(argc>0 && string(argv[1])=="prepare"){
+        string cacheFolder = "cache/";
+        string pdbCode = "";
+        string referenceAtom = "CA";
+        string pdb_file_path = "";
+        bool force = false;
+
+        variables_map vm;
+        store(parse_command_line(argc, argv, prepare_opt), vm);
+        notify(vm);
+
+        if (vm.count("help")) {
+            cout << prepare_opt << "\n";
+            return 1;
+        }
+        if(vm.count("cache_folder")){
+            cacheFolder = vm["cache_folder"].as<string>();
+            if(cacheFolder[cacheFolder.size()-1] != '/'){
+                cacheFolder += "/";
+            }
+        }
+        if(vm.count("pdb_code")){
+            pdbCode = vm["pdb_code"].as<string>();
+        }
+        if(vm.count("reference_atom")){
+            referenceAtom = vm["reference_atom"].as<string>();
+        }
+        if(vm.count("pdb_file_path")){
+            pdb_file_path = vm["pdb_file_path"].as<string>();
+        }
+        if(vm.count("force")){
+            force = true;
+        }
+
+        if(pdbCode == "" && pdb_file_path == ""){
+            cout << "Missing arguments" << endl;
+            cout << prepare_opt << "\n";
+            return 1;
+        }
+
+        if(!fs::exists(cacheFolder)){
+            fs::create_directory(cacheFolder);
+        }
+        if(pdbCode != ""){
+            if(!fs::exists(cacheFolder+pdbCode)){
+                fs::create_directory(cacheFolder+pdbCode);
+                generateTxt(pdb_file_path,cacheFolder+pdbCode+"/protein.txt",referenceAtom);
+                generateDat(cacheFolder+pdbCode+"/protein.txt",cacheFolder+pdbCode+"/protein.dat");
+            }
+            else if(force){
+                generateTxt(pdb_file_path,cacheFolder+pdbCode+"/protein.txt",referenceAtom);
+                generateDat(cacheFolder+pdbCode+"/protein.txt",cacheFolder+pdbCode+"/protein.dat");
+            }
+        }
+
+    }
+
     else{
         cout <<"Specify a command such as:" << endl;
         cout <<"run:" << endl;
