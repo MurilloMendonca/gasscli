@@ -452,7 +452,7 @@ int main(int argc, char* argv[]){
     std::string username = getlogin();
     std::string appFolder = "/home/" + username + "/.gasscli/";
     if(!fs::exists(appFolder)){
-        fs::create_directory(appFolder);
+        throw std::runtime_error("App folder not found on path: " + appFolder);
     }
     options_description run_opt("Allowed options");
     run_opt.add_options()

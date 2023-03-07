@@ -20,5 +20,7 @@ build() {
 package() {
   cd "$srcdir/gasscli"
   install -Dm755 gasscli "$pkgdir"/usr/bin/gasscli
+  # Call configure.sh to create the cache folder
+  ./configure.sh
 }
 
