@@ -15,7 +15,7 @@ $(TARGET): $(OBJS)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 install:
-	install -m 755 $(TARGET) $(INSTALL_DIR)
+	install -m 557 $(TARGET) $(INSTALL_DIR)
 
 clean:
 	rm -f $(TARGET) $(OBJS)

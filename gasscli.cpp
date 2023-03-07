@@ -7,6 +7,7 @@
 #include <iostream>
 #include <string>
 #include <map>
+#include <unistd.h>
 #include <string.h>
 #include <regex>
 #include <sstream>
@@ -448,10 +449,15 @@ void printTargetInfo(Repositorio rep){
 
 
 int main(int argc, char* argv[]){
+    std::string username = getlogin();
+    std::string appFolder = "/home/" + username + "/.gasscli/";
+    if(!fs::exists(appFolder)){
+        fs::create_directory(appFolder);
+    }
     options_description run_opt("Allowed options");
     run_opt.add_options()
         ("help,h", "produce help message")
-        ("cache,c", value<string>(), "set cache folder")
+        ("cache,c", value<string>(), "set cache folder, default is .gasscli/cache/")
         ("reference_pdb,r", value<string>(), "set reference pdb")
         ("template_site,s", value<string>(), "set template site")
         ("mutations", value<string>(), "set mutations")
@@ -462,7 +468,7 @@ int main(int argc, char* argv[]){
     options_description download_opt("Allowed options");
     download_opt.add_options()
         ("help,h", "produce help message")
-        ("cache_folder,c", value<string>(), "set cache folder to download to, default is cache/")
+        ("cache_folder,c", value<string>(), "set cache folder to download to, default is .gasscli/cache/")
         ("pdb_list,p", value< vector<string> >()->multitoken(), "set pdb list")
         ("reference_atom", value<string>(), "set reference atom, default is CA")
         ("file_list,f", value<string>(), "set the path to a file containing a list of pdb files to download")
@@ -472,7 +478,7 @@ int main(int argc, char* argv[]){
     options_description prepare_opt("Allowed options");
     prepare_opt.add_options()
         ("help,h", "produce help message")
-        ("cache_folder,c", value<string>(), "set cache folder to add the .dat files to, default is cache/")
+        ("cache_folder,c", value<string>(), "set cache folder to add the .dat files to, default is .gasscli/cache/")
         ("pdb_code,p", value<string>(), "set pdb code")
         ("reference_atom", value<string>(), "set reference atom, default is CA")
         ("pdb_file_path,f", value<string>(), "set the path to the .pdb file to be prepared")
@@ -487,7 +493,7 @@ int main(int argc, char* argv[]){
         string mutations = "";
         string targetPdb = "";
         string referenceAtom = "CA";
-        string cacheFolder = "cache/";
+        string cacheFolder = appFolder + "cache/";
         string outputFilePath = "output.txt";
 
         variables_map vm;
@@ -558,7 +564,7 @@ int main(int argc, char* argv[]){
         run(temp,repositorio,outputFilePath);
     }
     else if(argc>0 && string(argv[1])=="download"){
-        string cacheFolder = "cache/";
+        string cacheFolder = appFolder + "cache/";
         vector<string> pdbList;
         string referenceAtom = "CA";
         string file_list = "";
@@ -636,7 +642,7 @@ int main(int argc, char* argv[]){
         }
     }
     else if(argc>0 && string(argv[1])=="prepare"){
-        string cacheFolder = "cache/";
+        string cacheFolder = appFolder + "cache/";
         string pdbCode = "";
         string referenceAtom = "CA";
         string pdb_file_path = "";
