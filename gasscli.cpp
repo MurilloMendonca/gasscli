@@ -340,15 +340,53 @@ void generateTxt(string pdbFilePath,string txtFilePath, string referenceAtom){
     }
 }
 
-GASS::Parameters getDefaultParameters(){
+GASS::Parameters readConfigParameters(string configFilePath){
     GASS::Parameters param;
-    param.AG_NUMBER_OF_GENERATIONS = 200;
-    param.AG_POPULATION_SIZE = 400;
-    param.AG_MUTATION_RATE = 0.2;
-    param.AG_CROSSOVER_RATE = 0.9;
-    param.AG_NUMBER_OF_ELITE_INDIVIDUALS = 100;
-    param.AG_TOURNAMENT_SIZE = 20;
+    ifstream inFile(configFilePath);
+    if(!inFile){
+        cout<<"Erro ao abrir o arquivo"<<endl;
+        exit(1);
+    }
+    else{
+        string line;
+        while(getline(inFile,line)){
+            if(line.find("AG_NUMBER_OF_GENERATIONS")!= string::npos){
+                string value = line.substr(25);
+                trim(value);
+                param.AG_NUMBER_OF_GENERATIONS = stoi(value);
+            }
+            if(line.find("AG_POPULATION_SIZE")!= string::npos){
+                string value = line.substr(19);
+                trim(value);
+                param.AG_POPULATION_SIZE = stoi(value);
+            }
+            if(line.find("AG_MUTATION_RATE")!= string::npos){
+                string value = line.substr(17);
+                trim(value);
+                param.AG_MUTATION_RATE = stof(value);
+            }
+            if(line.find("AG_CROSSOVER_RATE")!= string::npos){
+                string value = line.substr(18);
+                trim(value);
+                param.AG_CROSSOVER_RATE = stof(value);
+            }
+            if(line.find("AG_NUMBER_OF_ELITE_INDIVIDUALS")!= string::npos){
+                string value = line.substr(31);
+                trim(value);
+                param.AG_NUMBER_OF_ELITE_INDIVIDUALS = stoi(value);
+            }
+            if(line.find("AG_TOURNAMENT_SIZE")!= string::npos){
+                string value = line.substr(19);
+                trim(value);
+                param.AG_TOURNAMENT_SIZE = stoi(value);
+            }
+        }
+    }
     return param;
+}
+
+GASS::Parameters getDefaultParameters(){
+    return readConfigParameters("config");
 }
 
 void run(site temp, Repositorio rep, string outputFilePath){
