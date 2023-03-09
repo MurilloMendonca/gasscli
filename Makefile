@@ -19,3 +19,6 @@ install:
 
 clean:
 	rm -f $(TARGET) $(OBJS)
+
+debug:
+	$(CXX) $(CXXFLAGS) -g $(SRCS) -o $(TARGET)
