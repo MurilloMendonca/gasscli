@@ -1,0 +1,34 @@
+{
+    "DEFAULT_CACHE_FOLDER": "cache/",
+    "DEFAULT_RESULT_FILE": "result.txt",
+    "TARGET_PDB": "3NOS",
+    "REFERENCE_ATOM": "CA",
+    "AG": {
+      "POPULATION_SIZE": 400,
+      "NUMBER_OF_GENERATIONS": 200,
+      "MUTATION_RATE": 0.9,
+      "CROSSOVER_RATE": 0.9,
+      "NUMBER_OF_ELITE_INDIVIDUALS": 100,
+      "TOURNAMENT_SIZE": 20
+    },
+    "TEMPLATES": [{
+        "REFERENCE_PDB": "3NOS",
+        "RESIDUES": [{
+            "AMINO": "CYS",
+            "ID": 99,
+            "CHAIN": "A"
+        }, {
+            "AMINO": "CYS",
+            "ID": 94,
+            "CHAIN": "A"
+        }, {
+            "AMINO": "CYS",
+            "ID": 99,
+            "CHAIN": "B"
+        }, {
+            "AMINO": "CYS",
+            "ID": 94,
+            "CHAIN": "B"
+        }]
+    }]
+} 

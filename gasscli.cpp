@@ -167,6 +167,64 @@ site readTemplate(string templateSite, string referencePdbFileName){
     return temp;
 }
 
+vector<site> readTemplates(string jsonFilePath, string cacheFolder) {
+    vector<site> templates;
+    ifstream jsonFile(jsonFilePath);
+    if (!jsonFile) {
+        cerr << "Failed to open JSON file: " << jsonFilePath << endl;
+        exit(1);
+    }
+    json jsonData;
+    try {
+        jsonFile >> jsonData;
+    }
+    catch (const std::exception& e) {
+        cerr << "Failed to parse JSON file: " << e.what() << endl;
+        exit(1);
+    }
+    if (jsonData.find("TEMPLATES") != jsonData.end()) {
+        for (auto& templateJson : jsonData["TEMPLATES"]) {
+            site templateObj;
+            if (templateJson.find("REFERENCE_PDB") != templateJson.end()) {
+                templateObj.pdbId = templateJson["REFERENCE_PDB"].get<std::string>();
+            }
+            if (templateJson.find("RESIDUES") != templateJson.end()) {
+                for (auto& residueJson : templateJson["RESIDUES"]) {
+                    Atomo residueObj;
+                    if (residueJson.find("AMINO") != residueJson.end()) {
+                        residueObj.amino = residueJson["AMINO"].get<std::string>();
+                    }
+                    if (residueJson.find("ID") != residueJson.end()) {
+                        residueObj.atomo_ID = residueJson["ID"].get<int>();
+                    }
+                    if (residueJson.find("CHAIN") != residueJson.end()) {
+                        residueObj.cadeia = residueJson["CHAIN"].get<string>()[0];
+                    }
+                    templateObj.residuos.push_back(residueObj);
+                }
+            }
+            templateObj.size = templateObj.residuos.size();
+            string referencePdbFileName = cacheFolder + "/" + templateObj.pdbId + "/protein.dat";
+            GASS::readTemplateFile(referencePdbFileName,templateObj);
+            templates.push_back(templateObj);
+        }
+    }
+    return templates;
+}
+string getValueFromConfig(string configFilePath, string key) {
+    ifstream inFile(configFilePath);
+    if(!inFile){
+        cout<<"Erro ao abrir o arquivo"<<endl;
+        exit(1);
+    }
+    else{
+        json j;
+        inFile >> j;
+
+       return j[key].get<string>();
+    }
+    return "";
+}
 void transfer(char *linha,AtomoCompat &aux){
     aux.cadeia=linha[21]; //Adicionando a cadeia
     //Pegando o nome do atomo;
@@ -342,51 +400,29 @@ void generateTxt(string pdbFilePath,string txtFilePath, string referenceAtom){
 
 GASS::Parameters readConfigParameters(string configFilePath){
     GASS::Parameters param;
+
     ifstream inFile(configFilePath);
     if(!inFile){
         cout<<"Erro ao abrir o arquivo"<<endl;
         exit(1);
     }
     else{
-        string line;
-        while(getline(inFile,line)){
-            if(line.find("AG_NUMBER_OF_GENERATIONS")!= string::npos){
-                string value = line.substr(25);
-                trim(value);
-                param.AG_NUMBER_OF_GENERATIONS = stoi(value);
-            }
-            if(line.find("AG_POPULATION_SIZE")!= string::npos){
-                string value = line.substr(19);
-                trim(value);
-                param.AG_POPULATION_SIZE = stoi(value);
-            }
-            if(line.find("AG_MUTATION_RATE")!= string::npos){
-                string value = line.substr(17);
-                trim(value);
-                param.AG_MUTATION_RATE = stof(value);
-            }
-            if(line.find("AG_CROSSOVER_RATE")!= string::npos){
-                string value = line.substr(18);
-                trim(value);
-                param.AG_CROSSOVER_RATE = stof(value);
-            }
-            if(line.find("AG_NUMBER_OF_ELITE_INDIVIDUALS")!= string::npos){
-                string value = line.substr(31);
-                trim(value);
-                param.AG_NUMBER_OF_ELITE_INDIVIDUALS = stoi(value);
-            }
-            if(line.find("AG_TOURNAMENT_SIZE")!= string::npos){
-                string value = line.substr(19);
-                trim(value);
-                param.AG_TOURNAMENT_SIZE = stoi(value);
-            }
-        }
+        json j;
+        inFile >> j;
+
+        param.AG_NUMBER_OF_GENERATIONS = j["AG"]["NUMBER_OF_GENERATIONS"].get<int>();
+        param.AG_POPULATION_SIZE = j["AG"]["POPULATION_SIZE"].get<int>();
+        param.AG_MUTATION_RATE = j["AG"]["MUTATION_RATE"].get<float>();
+        param.AG_CROSSOVER_RATE = j["AG"]["CROSSOVER_RATE"].get<float>();
+        param.AG_NUMBER_OF_ELITE_INDIVIDUALS = j["AG"]["NUMBER_OF_ELITE_INDIVIDUALS"].get<int>();
+        param.AG_TOURNAMENT_SIZE = j["AG"]["TOURNAMENT_SIZE"].get<int>();
     }
+
     return param;
 }
 
 GASS::Parameters getDefaultParameters(){
-    return readConfigParameters("config");
+    return readConfigParameters("config.json");
 }
 
 void run(site temp, Repositorio rep, string outputFilePath){
@@ -484,15 +520,22 @@ void printTargetInfo(Repositorio rep){
 }
 
 
-
-
 int main(int argc, char* argv[]){
-    std::string username = getlogin();
-    std::string appFolder = "/home/" + username + "/.gasscli/";
+    std::string appFolder ="";
+    if(!fs::exists(fs::current_path()/"config.json")){
+        std::cout<<"config file not found on path: "<<fs::current_path()<<std::endl;
+        std::cout<<"using default path: ~/.gasscli/config"<<std::endl;
+        std::string username = getlogin();
+        appFolder = "/home/" + username + "/.gasscli/";
+    }
+    else{
+        appFolder = fs::current_path().string() + "/";
+    }
+    
     if(!fs::exists(appFolder)){
         throw std::runtime_error("App folder not found on path: " + appFolder);
     }
-    options_description run_opt("Allowed options");
+    options_description run_opt("run options");
     run_opt.add_options()
         ("help,h", "produce help message")
         ("cache,c", value<string>(), "set cache folder, default is .gasscli/cache/")
@@ -503,7 +546,7 @@ int main(int argc, char* argv[]){
         ("reference_atom", value<string>(), "set reference atom")
         ("output,o", value<string>(), "set output file, default is output.txt")
     ;
-    options_description download_opt("Allowed options");
+    options_description download_opt("download options");
     download_opt.add_options()
         ("help,h", "produce help message")
         ("cache_folder,c", value<string>(), "set cache folder to download to, default is .gasscli/cache/")
@@ -513,7 +556,7 @@ int main(int argc, char* argv[]){
         ("force", "force download even if .pdb file already exists")
 
     ;
-    options_description prepare_opt("Allowed options");
+    options_description prepare_opt("prepare options");
     prepare_opt.add_options()
         ("help,h", "produce help message")
         ("cache_folder,c", value<string>(), "set cache folder to add the .dat files to, default is .gasscli/cache/")
@@ -521,6 +564,12 @@ int main(int argc, char* argv[]){
         ("reference_atom", value<string>(), "set reference atom, default is CA")
         ("pdb_file_path,f", value<string>(), "set the path to the .pdb file to be prepared")
         ("force", "force prepare even if .dat file already exists")
+    ;
+    options_description runconf_opt("run_config options");
+    runconf_opt.add_options()
+        ("help,h", "produce help message")
+        ("config_file,c", value<string>(), "set the path to the config json file to be used")
+
     ;
 
     if(argc>0 && string(argv[1])=="run"){
@@ -735,13 +784,42 @@ int main(int argc, char* argv[]){
         }
 
     }
+    else if(argc>0 && string(argv[1])=="run_config"){
+        string configFilePath = "";
+        variables_map vm;
+        store(parse_command_line(argc, argv, runconf_opt), vm);
+        notify(vm);
+        if(vm.count("config_file")){
+            configFilePath = vm["config_file"].as<string>();
+        }
+        if(vm.count("help")){
+            cout << runconf_opt << "\n";
+            return 1;
+        }
+        if(configFilePath == ""){
+            cout << "No config file specified" << endl;
+            cout << "Using default config file" << endl;
+            configFilePath = appFolder + "config.json";
+        }
+        string cacheFolder = getValueFromConfig(configFilePath, "DEFAULT_CACHE_FOLDER");
+        vector<site> templates = readTemplates(configFilePath, cacheFolder);
+        //printTemplateInfo(templates[0]);
 
+
+        string targetPdb = getValueFromConfig(configFilePath, "TARGET_PDB");
+        Repositorio repositorio;
+        repositorio.readRepository(cacheFolder+targetPdb+"/protein.dat");
+
+        //printTargetInfo(repositorio);
+        string outputFilePath = getValueFromConfig(configFilePath, "DEFAULT_RESULT_FILE");
+        run(templates[0],repositorio,outputFilePath);
+    }
     else{
-        cout <<"Specify a command such as:" << endl;
-        cout <<"run:" << endl;
-        cout << run_opt << "\n";
-        cout <<"download:" << endl;
-        cout << download_opt << "\n";
+        cout << "Usage: gasscli [instruction] [options]\n\n"
+         << "Allowed instructions:\n"
+         << run_opt << "\n"
+         << download_opt << "\n"
+         << prepare_opt << endl;
     }
     return 0;
 }
