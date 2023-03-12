@@ -1,7 +1,7 @@
 {
     "DEFAULT_CACHE_FOLDER": "cache/",
     "DEFAULT_RESULT_FILE": "result.txt",
-    "TARGET_PDB": "3NOS",
+    "TARGET_PDB": "5CNV",
     "REFERENCE_ATOM": "CA",
     "AG": {
       "POPULATION_SIZE": 400,
@@ -29,6 +29,33 @@
             "AMINO": "CYS",
             "ID": 94,
             "CHAIN": "B"
+        }]
+    },{
+        "REFERENCE_PDB": "5CNV",
+        "RESIDUES": [{
+            "AMINO": "GLU",
+            "ID": 238,
+            "CHAIN": "G"
+        }, {
+            "AMINO": "GLU",
+            "ID": 115,
+            "CHAIN": "G"
+        }, {
+            "AMINO": "HIS",
+            "ID": 118,
+            "CHAIN": "G"
+        }, {
+            "AMINO": "ASP",
+            "ID": 84,
+            "CHAIN": "G"
+        }, {
+            "AMINO": "GLU",
+            "ID": 204,
+            "CHAIN": "G"
+        }, {
+            "AMINO": "HIS",
+            "ID": 241,
+            "CHAIN": "G"
         }]
     }]
 } 

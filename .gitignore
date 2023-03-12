@@ -4,3 +4,4 @@ gasscli
 *.o
 *.txt
 install/
+*.py

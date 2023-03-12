@@ -138,93 +138,6 @@ void downloadPdb(const string& code, const string& pathToSave) {
         exit(1);
     }
 }
-
-site readTemplate(string templateSite, string referencePdbFileName){
-    site temp;
-    string word;
-    stringstream ss(templateSite);
-    int i=0;
-    Atomo aux;
-
-    while(ss.good()){
-        if(i%3==0){
-            getline(ss,word,',');
-            aux.amino=word;
-        }
-        else if(i%3==1){
-            getline(ss,word,',');
-            aux.atomo_ID=stoi(word);
-        }
-        else if(i%3==2){
-            getline(ss,word,';');
-            aux.cadeia=word[0];
-            temp.residuos.push_back(aux);
-        }
-        i++;
-    }
-    temp.size=temp.residuos.size();
-    GASS::readTemplateFile(referencePdbFileName,temp);
-    return temp;
-}
-
-vector<site> readTemplates(string jsonFilePath, string cacheFolder) {
-    vector<site> templates;
-    ifstream jsonFile(jsonFilePath);
-    if (!jsonFile) {
-        cerr << "Failed to open JSON file: " << jsonFilePath << endl;
-        exit(1);
-    }
-    json jsonData;
-    try {
-        jsonFile >> jsonData;
-    }
-    catch (const std::exception& e) {
-        cerr << "Failed to parse JSON file: " << e.what() << endl;
-        exit(1);
-    }
-    if (jsonData.find("TEMPLATES") != jsonData.end()) {
-        for (auto& templateJson : jsonData["TEMPLATES"]) {
-            site templateObj;
-            if (templateJson.find("REFERENCE_PDB") != templateJson.end()) {
-                templateObj.pdbId = templateJson["REFERENCE_PDB"].get<std::string>();
-            }
-            if (templateJson.find("RESIDUES") != templateJson.end()) {
-                for (auto& residueJson : templateJson["RESIDUES"]) {
-                    Atomo residueObj;
-                    if (residueJson.find("AMINO") != residueJson.end()) {
-                        residueObj.amino = residueJson["AMINO"].get<std::string>();
-                    }
-                    if (residueJson.find("ID") != residueJson.end()) {
-                        residueObj.atomo_ID = residueJson["ID"].get<int>();
-                    }
-                    if (residueJson.find("CHAIN") != residueJson.end()) {
-                        residueObj.cadeia = residueJson["CHAIN"].get<string>()[0];
-                    }
-                    templateObj.residuos.push_back(residueObj);
-                }
-            }
-            templateObj.size = templateObj.residuos.size();
-            string referencePdbFileName = cacheFolder + "/" + templateObj.pdbId + "/protein.dat";
-            GASS::readTemplateFile(referencePdbFileName,templateObj);
-            templates.push_back(templateObj);
-        }
-    }
-    return templates;
-}
-string getValueFromConfig(string configFilePath, string key) {
-    ifstream inFile(configFilePath);
-    if(!inFile){
-        cout<<"Erro ao abrir o arquivo"<<endl;
-        exit(1);
-    }
-    else{
-        json j;
-        inFile >> j;
-
-       return j[key].get<string>();
-    }
-    return "";
-}
 void transfer(char *linha,AtomoCompat &aux){
     aux.cadeia=linha[21]; //Adicionando a cadeia
     //Pegando o nome do atomo;
@@ -304,6 +217,7 @@ void transfer(char *linha,AtomoCompat &aux){
     aux.atomo_ID=ID;
 };
 
+
 void generateDat(string txtFilePath, string datFilePath){
     char nome_proteina[10], nome_arquivo[10];
 	char nometemp [6];
@@ -316,7 +230,7 @@ void generateDat(string txtFilePath, string datFilePath){
     ifstream inFileProteina;
     inFileProteina.open(txtFilePath);
     if(!inFileProteina){
-        cout<<"Erro ao abrir o arquivo"<<endl;
+        cout<<"Erro ao abrir o arquivo: "<<txtFilePath<<endl;
         exit(1);
     }
     else{
@@ -398,12 +312,105 @@ void generateTxt(string pdbFilePath,string txtFilePath, string referenceAtom){
     }
 }
 
+site readTemplate(string templateSite, string referencePdbFileName){
+    site temp;
+    string word;
+    stringstream ss(templateSite);
+    int i=0;
+    Atomo aux;
+
+    while(ss.good()){
+        if(i%3==0){
+            getline(ss,word,',');
+            aux.amino=word;
+        }
+        else if(i%3==1){
+            getline(ss,word,',');
+            aux.atomo_ID=stoi(word);
+        }
+        else if(i%3==2){
+            getline(ss,word,';');
+            aux.cadeia=word[0];
+            temp.residuos.push_back(aux);
+        }
+        i++;
+    }
+    temp.size=temp.residuos.size();
+    GASS::readTemplateFile(referencePdbFileName,temp);
+    return temp;
+}
+
+vector<site> readTemplates(string jsonFilePath, string cacheFolder) {
+    vector<site> templates;
+    ifstream jsonFile(jsonFilePath);
+    if (!jsonFile) {
+        cerr << "Failed to open JSON file: " << jsonFilePath << endl;
+        exit(1);
+    }
+    json jsonData;
+    try {
+        jsonFile >> jsonData;
+    }
+    catch (const std::exception& e) {
+        cerr << "Failed to parse JSON file: " << e.what() << endl;
+        exit(1);
+    }
+    if (jsonData.find("TEMPLATES") != jsonData.end()) {
+        for (auto& templateJson : jsonData["TEMPLATES"]) {
+            site templateObj;
+            if (templateJson.find("REFERENCE_PDB") != templateJson.end()) {
+                templateObj.pdbId = templateJson["REFERENCE_PDB"].get<std::string>();
+            }
+            if (templateJson.find("RESIDUES") != templateJson.end()) {
+                for (auto& residueJson : templateJson["RESIDUES"]) {
+                    Atomo residueObj;
+                    if (residueJson.find("AMINO") != residueJson.end()) {
+                        residueObj.amino = residueJson["AMINO"].get<std::string>();
+                    }
+                    if (residueJson.find("ID") != residueJson.end()) {
+                        residueObj.atomo_ID = residueJson["ID"].get<int>();
+                    }
+                    if (residueJson.find("CHAIN") != residueJson.end()) {
+                        residueObj.cadeia = residueJson["CHAIN"].get<string>()[0];
+                    }
+                    templateObj.residuos.push_back(residueObj);
+                }
+            }
+            templateObj.size = templateObj.residuos.size();
+            string referencePdbFileName = cacheFolder + "/" + templateObj.pdbId + "/protein.dat";
+            if(!fs::exists(cacheFolder+templateObj.pdbId)){
+                fs::create_directory(cacheFolder+templateObj.pdbId);
+                downloadPdb(templateObj.pdbId, cacheFolder+templateObj.pdbId+"/protein.pdb");
+                generateTxt(cacheFolder+templateObj.pdbId+"/protein.pdb",cacheFolder+templateObj.pdbId+"/protein.txt","CA");
+                generateDat(cacheFolder+templateObj.pdbId+"/protein.txt",cacheFolder+templateObj.pdbId+"/protein.dat");
+            }
+            GASS::readTemplateFile(referencePdbFileName,templateObj);
+            templates.push_back(templateObj);
+        }
+    }
+    return templates;
+}
+string getValueFromConfig(string configFilePath, string key) {
+    ifstream inFile(configFilePath);
+    if(!inFile){
+        cout<<"Erro ao abrir o arquivo"<<configFilePath<<endl;
+        exit(1);
+    }
+    else{
+        json j;
+        inFile >> j;
+
+       return j[key].get<string>();
+    }
+    return "";
+}
+
 GASS::Parameters readConfigParameters(string configFilePath){
     GASS::Parameters param;
 
     ifstream inFile(configFilePath);
     if(!inFile){
-        cout<<"Erro ao abrir o arquivo"<<endl;
+        cout<<"Erro ao abrir o arquivo: "<<configFilePath<<endl;
         exit(1);
     }
     else{
@@ -425,11 +432,16 @@ GASS::Parameters getDefaultParameters(){
     return readConfigParameters("config.json");
 }
 
+GASS::Parameters getDefaultParameters(string configFilePath){
+    return readConfigParameters(configFilePath);
+}
+
 void run(site temp, Repositorio rep, string outputFilePath){
     std::set<Individuo> results;
+    ofstream ofs(outputFilePath);
+
     GASS::runOneToOne(&temp, &rep, &results, getDefaultParameters());
 
-    ofstream ofs(outputFilePath);
     int contador=1;
     int tam_sitiof = temp.residuos.size();
     int i=0;
@@ -472,6 +484,61 @@ void run(site temp, Repositorio rep, string outputFilePath){
         i++;
     }
 }
+
+void run(vector<site> temps, Repositorio rep, string outputFilePath, GASS::Parameters param){
+    std::set<Individuo> results;
+    ofstream ofs(outputFilePath);
+    int contador=1;
+    for(site temp:temps){
+        GASS::runOneToOne(&temp, &rep, &results, param);
+        
+        
+        int tam_sitiof = temp.residuos.size();
+        int i=0;
+        for (Individuo ind:results)
+        {
+            ofs << contador << "\t" << i << "\t";
+            ofs << std::setprecision(3) << ind.getFitness() << "\t";
+            if (ind.getFitness() != 1000)
+            {
+                ofs << ind.cromossomo[0].amino << " " << ind.cromossomo[0].atomo_ID << " " << ind.cromossomo[0].cadeia;
+                for (int j = 1; j < tam_sitiof; j++)
+                    ofs << ";" << ind.cromossomo[j].amino << " " << ind.cromossomo[j].atomo_ID << " " << ind.cromossomo[j].cadeia;
+                ofs << "\t" << temp.pdbId << "\t";
+                ofs << temp.residuos[0].amino << " " << temp.residuos[0].atomo_ID << " " << temp.residuos[0].cadeia;
+                for (int j = 1; j < tam_sitiof; j++)
+                    ofs << ";" << temp.residuos[j].amino << " " << temp.residuos[j].atomo_ID << " " << temp.residuos[j].cadeia;
+            }
+            else
+            {
+                ofs << " - "
+                    << " "
+                    << " - "
+                    << " "
+                    << " - ";
+                for (int j = 1; j < tam_sitiof; j++)
+                    ofs << ";"
+                        << " - "
+                        << " "
+                        << " - "
+                        << " "
+                        << " - ";
+                ofs << "\t" << temp.pdbId << "\t";
+                ofs << temp.residuos[0].amino << " " << temp.residuos[0].atomo_ID << " " << temp.residuos[0].cadeia;
+                for (int j = 1; j < tam_sitiof; j++)
+                    ofs << ";" << temp.residuos[j].amino << " " << temp.residuos[j].atomo_ID << " " << temp.residuos[j].cadeia;
+            
+            }
+            //ofs << "\t" << ecnumber << "\t" << uniprot << "\t" << resolution << "\t" << tam_sitiof;
+            ofs << std::endl;
+            i++;
+        }
+        contador++;
+        results.clear();
+    }
+    ofs.close();
+}
+
 
 void readMutations(string mutations, site& temp){
     const map<string, int> AMINO_CODES_MAP = {
@@ -800,19 +867,31 @@ int main(int argc, char* argv[]){
             cout << "No config file specified" << endl;
             cout << "Using default config file" << endl;
             configFilePath = appFolder + "config.json";
+            cout<<configFilePath<<"\n";
         }
         string cacheFolder = getValueFromConfig(configFilePath, "DEFAULT_CACHE_FOLDER");
+        if(!fs::exists(cacheFolder)){
+            fs::create_directory(cacheFolder);
+        }
+        
+        cout<<"Using cache folder: "<<cacheFolder<<"\n";
         vector<site> templates = readTemplates(configFilePath, cacheFolder);
         //printTemplateInfo(templates[0]);
 
 
         string targetPdb = getValueFromConfig(configFilePath, "TARGET_PDB");
+        if(!fs::exists(cacheFolder+targetPdb)){
+            fs::create_directory(cacheFolder+targetPdb);
+            downloadPdb(targetPdb, cacheFolder+targetPdb+"/protein.pdb");
+            generateTxt(cacheFolder+targetPdb+"/protein.pdb",cacheFolder+targetPdb+"/protein.txt","CA");
+            generateDat(cacheFolder+targetPdb+"/protein.txt",cacheFolder+targetPdb+"/protein.dat");
+        }
         Repositorio repositorio;
         repositorio.readRepository(cacheFolder+targetPdb+"/protein.dat");
 
         //printTargetInfo(repositorio);
         string outputFilePath = getValueFromConfig(configFilePath, "DEFAULT_RESULT_FILE");
-        run(templates[0],repositorio,outputFilePath);
+        ::run(templates,repositorio,outputFilePath, getDefaultParameters(configFilePath));
     }
     else{
         cout << "Usage: gasscli [instruction] [options]\n\n"

@@ -1,0 +1,5256 @@
+{
+    "DEFAULT_CACHE_FOLDER": "cache/",
+    "DEFAULT_RESULT_FILE": "result.txt",
+    "TARGET_PDB": "3NOS",
+    "REFERENCE_ATOM": "CA",
+    "AG": {
+        "POPULATION_SIZE": 400,
+        "NUMBER_OF_GENERATIONS": 200,
+        "MUTATION_RATE": 0.9,
+        "CROSSOVER_RATE": 0.9,
+        "NUMBER_OF_ELITE_INDIVIDUALS": 100,
+        "TOURNAMENT_SIZE": 20
+    },
+    "TEMPLATES": [
+        {
+            "REFERENCE_PDB": "1A4L",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 515,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 714,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 517,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 795,
+                    "CHAIN": "B"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1A4L",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 1017,
+                    "CHAIN": "C"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 1015,
+                    "CHAIN": "C"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 1295,
+                    "CHAIN": "C"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 1214,
+                    "CHAIN": "C"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1A4L",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 1714,
+                    "CHAIN": "D"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 1517,
+                    "CHAIN": "D"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 1795,
+                    "CHAIN": "D"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 1515,
+                    "CHAIN": "D"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1A4L",
+            "RESIDUES": [
+                {
+                    "AMINO": "ASP",
+                    "ID": 295,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 214,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 17,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 15,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1A8H",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 127,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 147,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 144,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 130,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1ADN",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 42,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 38,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 72,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 69,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1AH7",
+            "RESIDUES": [
+                {
+                    "AMINO": "GLU",
+                    "ID": 146,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 128,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 142,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 122,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 118,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 69,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 55,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 14,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "TRP",
+                    "ID": 1,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1AK0",
+            "RESIDUES": [
+                {
+                    "AMINO": "ASP",
+                    "ID": 120,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 45,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 60,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 116,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 126,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 153,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 149,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "TRP",
+                    "ID": 1,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 6,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1ALK",
+            "RESIDUES": [
+                {
+                    "AMINO": "ASP",
+                    "ID": 327,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 412,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 331,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 51,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 370,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 369,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "SER",
+                    "ID": 102,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "GLU",
+                    "ID": 322,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "THR",
+                    "ID": 155,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1ALK",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 412,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 331,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 327,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 51,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "SER",
+                    "ID": 102,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 369,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 370,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "THR",
+                    "ID": 155,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "GLU",
+                    "ID": 322,
+                    "CHAIN": "B"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1AST",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 92,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 96,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "TYR",
+                    "ID": 149,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 102,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1AT1",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 114,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 109,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 141,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 138,
+                    "CHAIN": "B"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1AT1",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 114,
+                    "CHAIN": "D"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 109,
+                    "CHAIN": "D"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 141,
+                    "CHAIN": "D"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 138,
+                    "CHAIN": "D"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1AUI",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 92,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 118,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 90,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "ASN",
+                    "ID": 150,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 199,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 281,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1B57",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 226,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 264,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 110,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "VAL",
+                    "ID": 225,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "GLY",
+                    "ID": 227,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "GLY",
+                    "ID": 265,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "SER",
+                    "ID": 267,
+                    "CHAIN": "B"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1B57",
+            "RESIDUES": [
+                {
+                    "AMINO": "GLU",
+                    "ID": 174,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "GLU",
+                    "ID": 181,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 144,
+                    "CHAIN": "B"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1B57",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 226,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 264,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 110,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "VAL",
+                    "ID": 225,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "SER",
+                    "ID": 267,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "GLY",
+                    "ID": 265,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "GLY",
+                    "ID": 227,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1B57",
+            "RESIDUES": [
+                {
+                    "AMINO": "GLU",
+                    "ID": 181,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "GLU",
+                    "ID": 174,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 144,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1B66",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 23,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 48,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 50,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1B66",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 50,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 48,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 23,
+                    "CHAIN": "B"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1BC2",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 210,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 168,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 90,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 88,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 86,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 149,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1BC2",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 86,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 88,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 149,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 90,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 168,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 210,
+                    "CHAIN": "B"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1CA2",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 119,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 96,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 94,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1CG2",
+            "RESIDUES": [
+                {
+                    "AMINO": "GLU",
+                    "ID": 176,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 385,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 141,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "GLU",
+                    "ID": 200,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 112,
+                    "CHAIN": "B"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1CG2",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 112,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "GLU",
+                    "ID": 200,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 141,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 385,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "GLU",
+                    "ID": 176,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1CG2",
+            "RESIDUES": [
+                {
+                    "AMINO": "ASP",
+                    "ID": 141,
+                    "CHAIN": "D"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 112,
+                    "CHAIN": "D"
+                },
+                {
+                    "AMINO": "GLU",
+                    "ID": 200,
+                    "CHAIN": "D"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 385,
+                    "CHAIN": "D"
+                },
+                {
+                    "AMINO": "GLU",
+                    "ID": 176,
+                    "CHAIN": "D"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1CG2",
+            "RESIDUES": [
+                {
+                    "AMINO": "GLU",
+                    "ID": 176,
+                    "CHAIN": "C"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 385,
+                    "CHAIN": "C"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 141,
+                    "CHAIN": "C"
+                },
+                {
+                    "AMINO": "GLU",
+                    "ID": 200,
+                    "CHAIN": "C"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 112,
+                    "CHAIN": "C"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1CTT",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 129,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 132,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 102,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1CW0",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 71,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 73,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 117,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 66,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1CZ0",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 138,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 125,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 132,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 134,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1CZ0",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 241,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 305,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 300,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 310,
+                    "CHAIN": "B"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1CZ0",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 334,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 338,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 325,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 332,
+                    "CHAIN": "B"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1CZ0",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 100,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 41,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 110,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 105,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1D8D",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 362,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 297,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 299,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 8,
+                    "CHAIN": "P"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1DE6",
+            "RESIDUES": [
+                {
+                    "AMINO": "ASP",
+                    "ID": 267,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 294,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "GLU",
+                    "ID": 234,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 334,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 304,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 270,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 302,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1DE6",
+            "RESIDUES": [
+                {
+                    "AMINO": "ASP",
+                    "ID": 334,
+                    "CHAIN": "C"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 294,
+                    "CHAIN": "C"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 267,
+                    "CHAIN": "C"
+                },
+                {
+                    "AMINO": "GLU",
+                    "ID": 234,
+                    "CHAIN": "C"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 302,
+                    "CHAIN": "C"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 304,
+                    "CHAIN": "C"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 270,
+                    "CHAIN": "C"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1DE6",
+            "RESIDUES": [
+                {
+                    "AMINO": "GLU",
+                    "ID": 234,
+                    "CHAIN": "D"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 334,
+                    "CHAIN": "D"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 294,
+                    "CHAIN": "D"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 267,
+                    "CHAIN": "D"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 302,
+                    "CHAIN": "D"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 270,
+                    "CHAIN": "D"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 304,
+                    "CHAIN": "D"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1DE6",
+            "RESIDUES": [
+                {
+                    "AMINO": "ASP",
+                    "ID": 267,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 334,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 294,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "GLU",
+                    "ID": 234,
+                    "CHAIN": "B"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1DGS",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 2409,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 2406,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 2422,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 2427,
+                    "CHAIN": "B"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1DGS",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 409,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 406,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 422,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 427,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1DQS",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 287,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 271,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "GLU",
+                    "ID": 194,
+                    "CHAIN": "B"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1DQS",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 271,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "GLU",
+                    "ID": 194,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 287,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1E3I",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 97,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 100,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 111,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 103,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1E3I",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 100,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 97,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 103,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 111,
+                    "CHAIN": "B"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1E3I",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 46,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 67,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 178,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1E3I",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 178,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 67,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 46,
+                    "CHAIN": "B"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1EB6",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 132,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 128,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 143,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1EH6",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 29,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 24,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 85,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 5,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1EN7",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 61,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 58,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 26,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 23,
+                    "CHAIN": "B"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1EN7",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 61,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 58,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 23,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 26,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1FBX",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 181,
+                    "CHAIN": "G"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 113,
+                    "CHAIN": "G"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 110,
+                    "CHAIN": "G"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1FBX",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 110,
+                    "CHAIN": "L"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 181,
+                    "CHAIN": "L"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 113,
+                    "CHAIN": "L"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1FBX",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 181,
+                    "CHAIN": "H"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 110,
+                    "CHAIN": "H"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 113,
+                    "CHAIN": "H"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1FBX",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 113,
+                    "CHAIN": "M"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 110,
+                    "CHAIN": "M"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 181,
+                    "CHAIN": "M"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1FBX",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 113,
+                    "CHAIN": "N"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 110,
+                    "CHAIN": "N"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 181,
+                    "CHAIN": "N"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1FBX",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 113,
+                    "CHAIN": "F"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 110,
+                    "CHAIN": "F"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 181,
+                    "CHAIN": "F"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1FBX",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 181,
+                    "CHAIN": "O"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 110,
+                    "CHAIN": "O"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 113,
+                    "CHAIN": "O"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1FBX",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 181,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 113,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 110,
+                    "CHAIN": "B"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1FBX",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 110,
+                    "CHAIN": "C"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 181,
+                    "CHAIN": "C"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 113,
+                    "CHAIN": "C"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1FBX",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 113,
+                    "CHAIN": "D"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 110,
+                    "CHAIN": "D"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 181,
+                    "CHAIN": "D"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1FBX",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 110,
+                    "CHAIN": "K"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 181,
+                    "CHAIN": "K"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 113,
+                    "CHAIN": "K"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1FBX",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 181,
+                    "CHAIN": "I"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 113,
+                    "CHAIN": "I"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 110,
+                    "CHAIN": "I"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1FBX",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 181,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 110,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 113,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1FBX",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 113,
+                    "CHAIN": "E"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 110,
+                    "CHAIN": "E"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 181,
+                    "CHAIN": "E"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1FBX",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 110,
+                    "CHAIN": "J"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 113,
+                    "CHAIN": "J"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 181,
+                    "CHAIN": "J"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1FR2",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 127,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 131,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 102,
+                    "CHAIN": "B"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1GE7",
+            "RESIDUES": [
+                {
+                    "AMINO": "ASP",
+                    "ID": 130,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 117,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 121,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1GE7",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 121,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 130,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 117,
+                    "CHAIN": "B"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1GT7",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 212,
+                    "CHAIN": "I"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 141,
+                    "CHAIN": "I"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 143,
+                    "CHAIN": "I"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1GT7",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 141,
+                    "CHAIN": "N"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 143,
+                    "CHAIN": "N"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 212,
+                    "CHAIN": "N"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1GT7",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 143,
+                    "CHAIN": "O"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 212,
+                    "CHAIN": "O"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 141,
+                    "CHAIN": "O"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1GT7",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 143,
+                    "CHAIN": "F"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 212,
+                    "CHAIN": "F"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 141,
+                    "CHAIN": "F"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1GT7",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 212,
+                    "CHAIN": "M"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 141,
+                    "CHAIN": "M"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 143,
+                    "CHAIN": "M"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1GT7",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 143,
+                    "CHAIN": "P"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 212,
+                    "CHAIN": "P"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 141,
+                    "CHAIN": "P"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1GT7",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 212,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 141,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 143,
+                    "CHAIN": "B"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1GT7",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 212,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 143,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 141,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1GT7",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 143,
+                    "CHAIN": "G"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 212,
+                    "CHAIN": "G"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 141,
+                    "CHAIN": "G"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1GT7",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 212,
+                    "CHAIN": "E"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 141,
+                    "CHAIN": "E"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 143,
+                    "CHAIN": "E"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1GT7",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 212,
+                    "CHAIN": "Q"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 141,
+                    "CHAIN": "Q"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 143,
+                    "CHAIN": "Q"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1GT7",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 141,
+                    "CHAIN": "H"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 143,
+                    "CHAIN": "H"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 212,
+                    "CHAIN": "H"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1GT7",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 143,
+                    "CHAIN": "R"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 141,
+                    "CHAIN": "R"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 212,
+                    "CHAIN": "R"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1GT7",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 212,
+                    "CHAIN": "J"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 143,
+                    "CHAIN": "J"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 141,
+                    "CHAIN": "J"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1GT7",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 143,
+                    "CHAIN": "S"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 212,
+                    "CHAIN": "S"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 141,
+                    "CHAIN": "S"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1GT7",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 141,
+                    "CHAIN": "K"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 212,
+                    "CHAIN": "K"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 143,
+                    "CHAIN": "K"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1GT7",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 143,
+                    "CHAIN": "T"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 212,
+                    "CHAIN": "T"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 141,
+                    "CHAIN": "T"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1GT7",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 212,
+                    "CHAIN": "C"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 141,
+                    "CHAIN": "C"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 143,
+                    "CHAIN": "C"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1GT7",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 141,
+                    "CHAIN": "L"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 212,
+                    "CHAIN": "L"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 143,
+                    "CHAIN": "L"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1GT7",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 143,
+                    "CHAIN": "D"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 212,
+                    "CHAIN": "D"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 141,
+                    "CHAIN": "D"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1H1Z",
+            "RESIDUES": [
+                {
+                    "AMINO": "ASP",
+                    "ID": 178,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 36,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 38,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 69,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1H1Z",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 69,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 38,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 36,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 178,
+                    "CHAIN": "B"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1HFE",
+            "RESIDUES": [
+                {
+                    "AMINO": "ASP",
+                    "ID": 86,
+                    "CHAIN": "S"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 82,
+                    "CHAIN": "T"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 86,
+                    "CHAIN": "T"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1HFS",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 201,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 211,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 205,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1HFS",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 151,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 166,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 179,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 153,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1HR6",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 70,
+                    "CHAIN": "F"
+                },
+                {
+                    "AMINO": "GLU",
+                    "ID": 150,
+                    "CHAIN": "F"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 74,
+                    "CHAIN": "F"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1HR6",
+            "RESIDUES": [
+                {
+                    "AMINO": "GLU",
+                    "ID": 150,
+                    "CHAIN": "D"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 74,
+                    "CHAIN": "D"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 70,
+                    "CHAIN": "D"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1HR6",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 74,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "GLU",
+                    "ID": 150,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 70,
+                    "CHAIN": "B"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1HR6",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 70,
+                    "CHAIN": "H"
+                },
+                {
+                    "AMINO": "GLU",
+                    "ID": 150,
+                    "CHAIN": "H"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 74,
+                    "CHAIN": "H"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1HS6",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 299,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "GLU",
+                    "ID": 318,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 295,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1HXQ",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 52,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 55,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 164,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 115,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1HXQ",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 164,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 115,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 55,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 52,
+                    "CHAIN": "B"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1HZY",
+            "RESIDUES": [
+                {
+                    "AMINO": "ASP",
+                    "ID": 301,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 57,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 55,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 201,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 230,
+                    "CHAIN": "B"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1HZY",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 230,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 201,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 57,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 55,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 301,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1I1E",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 233,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 229,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "GLU",
+                    "ID": 267,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1I1I",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 478,
+                    "CHAIN": "P"
+                },
+                {
+                    "AMINO": "GLU",
+                    "ID": 503,
+                    "CHAIN": "P"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 474,
+                    "CHAIN": "P"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1I6P",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 98,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 42,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 101,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 44,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1ILE",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 461,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 504,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 502,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 464,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1ILE",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 181,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 392,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 389,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 184,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1IM5",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 71,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 52,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 54,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1ITQ",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 198,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "GLU",
+                    "ID": 125,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 219,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 22,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 20,
+                    "CHAIN": "B"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1ITQ",
+            "RESIDUES": [
+                {
+                    "AMINO": "ASP",
+                    "ID": 22,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "GLU",
+                    "ID": 125,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 20,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 198,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 219,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1J2U",
+            "RESIDUES": [
+                {
+                    "AMINO": "GLU",
+                    "ID": 183,
+                    "CHAIN": "F"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 36,
+                    "CHAIN": "F"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 45,
+                    "CHAIN": "F"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 120,
+                    "CHAIN": "F"
+                },
+                {
+                    "AMINO": "GLU",
+                    "ID": 34,
+                    "CHAIN": "F"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1J2U",
+            "RESIDUES": [
+                {
+                    "AMINO": "GLU",
+                    "ID": 183,
+                    "CHAIN": "E"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 36,
+                    "CHAIN": "E"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 45,
+                    "CHAIN": "E"
+                },
+                {
+                    "AMINO": "GLU",
+                    "ID": 34,
+                    "CHAIN": "E"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 120,
+                    "CHAIN": "E"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1J2U",
+            "RESIDUES": [
+                {
+                    "AMINO": "GLU",
+                    "ID": 34,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 120,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 45,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 36,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "GLU",
+                    "ID": 183,
+                    "CHAIN": "B"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1J2U",
+            "RESIDUES": [
+                {
+                    "AMINO": "ASP",
+                    "ID": 45,
+                    "CHAIN": "C"
+                },
+                {
+                    "AMINO": "GLU",
+                    "ID": 34,
+                    "CHAIN": "C"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 120,
+                    "CHAIN": "C"
+                },
+                {
+                    "AMINO": "GLU",
+                    "ID": 183,
+                    "CHAIN": "C"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 36,
+                    "CHAIN": "C"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1J2U",
+            "RESIDUES": [
+                {
+                    "AMINO": "ASP",
+                    "ID": 45,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "GLU",
+                    "ID": 183,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 36,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "GLU",
+                    "ID": 34,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 120,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1J2U",
+            "RESIDUES": [
+                {
+                    "AMINO": "ASP",
+                    "ID": 45,
+                    "CHAIN": "D"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 120,
+                    "CHAIN": "D"
+                },
+                {
+                    "AMINO": "GLU",
+                    "ID": 34,
+                    "CHAIN": "D"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 36,
+                    "CHAIN": "D"
+                },
+                {
+                    "AMINO": "GLU",
+                    "ID": 183,
+                    "CHAIN": "D"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1USH",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 217,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "ASN",
+                    "ID": 116,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 84,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 252,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 43,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 41,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "GLN",
+                    "ID": 254,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1J79",
+            "RESIDUES": [
+                {
+                    "AMINO": "ASP",
+                    "ID": 250,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 18,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 16,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 139,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 177,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1J79",
+            "RESIDUES": [
+                {
+                    "AMINO": "ASP",
+                    "ID": 250,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 16,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 18,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 177,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 139,
+                    "CHAIN": "B"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1P5D",
+            "RESIDUES": [
+                {
+                    "AMINO": "ASP",
+                    "ID": 244,
+                    "CHAIN": "X"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 246,
+                    "CHAIN": "X"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 242,
+                    "CHAIN": "X"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1P7M",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 179,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 175,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 17,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 4,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1PEG",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 81,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 128,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 66,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 132,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 134,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 74,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 138,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 79,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 68,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1PEG",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 308,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 313,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 306,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 244,
+                    "CHAIN": "B"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1PEG",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 306,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 244,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 313,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 308,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1PMI",
+            "RESIDUES": [
+                {
+                    "AMINO": "GLU",
+                    "ID": 138,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 285,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 113,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "GLN",
+                    "ID": 111,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1PUD",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 349,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 318,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 323,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 320,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1V54",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 62,
+                    "CHAIN": "S"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 60,
+                    "CHAIN": "S"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 85,
+                    "CHAIN": "S"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 82,
+                    "CHAIN": "S"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1V54",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 60,
+                    "CHAIN": "F"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 62,
+                    "CHAIN": "F"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 82,
+                    "CHAIN": "F"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 85,
+                    "CHAIN": "F"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1JDI",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 171,
+                    "CHAIN": "F"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 95,
+                    "CHAIN": "F"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 97,
+                    "CHAIN": "F"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1JDI",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 171,
+                    "CHAIN": "C"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 95,
+                    "CHAIN": "C"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 97,
+                    "CHAIN": "C"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1JDI",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 97,
+                    "CHAIN": "D"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 95,
+                    "CHAIN": "D"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 171,
+                    "CHAIN": "D"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1JDI",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 95,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 97,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 171,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1JDI",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 171,
+                    "CHAIN": "E"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 95,
+                    "CHAIN": "E"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 97,
+                    "CHAIN": "E"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1JDI",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 95,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 97,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 171,
+                    "CHAIN": "B"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1QF6",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 385,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 511,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 334,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1QH5",
+            "RESIDUES": [
+                {
+                    "AMINO": "ASP",
+                    "ID": 134,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 54,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 110,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 56,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 58,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 173,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 59,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1QH5",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 110,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 54,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 134,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 56,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 58,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 59,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 173,
+                    "CHAIN": "B"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1QIB",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 211,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 205,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 201,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1QIB",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 151,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 153,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 166,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 179,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1QIN",
+            "RESIDUES": [
+                {
+                    "AMINO": "GLU",
+                    "ID": 99,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 126,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "GLN",
+                    "ID": 33,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1QIN",
+            "RESIDUES": [
+                {
+                    "AMINO": "GLN",
+                    "ID": 33,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "GLU",
+                    "ID": 99,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 126,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1QLH",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 111,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 103,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 97,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 100,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1QLH",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 174,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 46,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 67,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1QUM",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 231,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 229,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 182,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 109,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 69,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "GLU",
+                    "ID": 145,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 216,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "GLU",
+                    "ID": 261,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 179,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "2YBP",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 234,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 308,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 306,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 240,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "2YBP",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 240,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 308,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 234,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 306,
+                    "CHAIN": "B"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1K82",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 266,
+                    "CHAIN": "C"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 246,
+                    "CHAIN": "C"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 263,
+                    "CHAIN": "C"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 243,
+                    "CHAIN": "C"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1K82",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 246,
+                    "CHAIN": "D"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 243,
+                    "CHAIN": "D"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 263,
+                    "CHAIN": "D"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 266,
+                    "CHAIN": "D"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1K82",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 266,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 246,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 243,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 263,
+                    "CHAIN": "B"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1K82",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 243,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 246,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 263,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 266,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1QWN",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 471,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 90,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 204,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 92,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1R1J",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 587,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 583,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "GLU",
+                    "ID": 646,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1R44",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 184,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 123,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 116,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1R44",
+            "RESIDUES": [
+                {
+                    "AMINO": "ASP",
+                    "ID": 123,
+                    "CHAIN": "F"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 184,
+                    "CHAIN": "F"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 116,
+                    "CHAIN": "F"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1R44",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 184,
+                    "CHAIN": "E"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 116,
+                    "CHAIN": "E"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 123,
+                    "CHAIN": "E"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1R44",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 184,
+                    "CHAIN": "D"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 123,
+                    "CHAIN": "D"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 116,
+                    "CHAIN": "D"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1R44",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 184,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 116,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 123,
+                    "CHAIN": "B"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1R44",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 116,
+                    "CHAIN": "C"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 123,
+                    "CHAIN": "C"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 184,
+                    "CHAIN": "C"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1KAE",
+            "RESIDUES": [
+                {
+                    "AMINO": "ASP",
+                    "ID": 360,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 262,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 419,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1KAE",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 262,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "GLN",
+                    "ID": 259,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 419,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 360,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1RGQ",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 100,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 102,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 148,
+                    "CHAIN": "B"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1RGQ",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 102,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 148,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 100,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1KEI",
+            "RESIDUES": [
+                {
+                    "AMINO": "GLU",
+                    "ID": 166,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 146,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 142,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "2QF7",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 749,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 549,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 747,
+                    "CHAIN": "B"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "2QF7",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 749,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 747,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 549,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1KQ3",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 252,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 269,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 169,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "2CJA",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 461,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "GLU",
+                    "ID": 355,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 306,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "2CJA",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 306,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "GLU",
+                    "ID": 355,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 461,
+                    "CHAIN": "B"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1SML",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 160,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 84,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 86,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 89,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 88,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 225,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1SNN",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 164,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "GLU",
+                    "ID": 26,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "TYR",
+                    "ID": 95,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1XA8",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 35,
+                    "CHAIN": "C"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 104,
+                    "CHAIN": "C"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 33,
+                    "CHAIN": "C"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 101,
+                    "CHAIN": "C"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1XA8",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 33,
+                    "CHAIN": "D"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 104,
+                    "CHAIN": "D"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 101,
+                    "CHAIN": "D"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 35,
+                    "CHAIN": "D"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1XA8",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 101,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 35,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 104,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 33,
+                    "CHAIN": "B"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1XA8",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 101,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 33,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 104,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 35,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1LAM",
+            "RESIDUES": [
+                {
+                    "AMINO": "ASP",
+                    "ID": 332,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 255,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "GLU",
+                    "ID": 334,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 273,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "LYS",
+                    "ID": 250,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1LAM",
+            "RESIDUES": [
+                {
+                    "AMINO": "LEU",
+                    "ID": 170,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "THR",
+                    "ID": 173,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "ARG",
+                    "ID": 271,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "MET",
+                    "ID": 171,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1LBA",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 130,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 122,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 17,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1LBU",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 154,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 197,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 161,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1SZD",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 170,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 173,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 143,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 146,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1LML",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 268,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 334,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 264,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1LOK",
+            "RESIDUES": [
+                {
+                    "AMINO": "ASP",
+                    "ID": 117,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 256,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "GLU",
+                    "ID": 152,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 179,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 97,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "2JCW",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 63,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 71,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 80,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 83,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1TEH",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 97,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 111,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 103,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 100,
+                    "CHAIN": "B"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1TEH",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 67,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "GLU",
+                    "ID": 68,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 174,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 46,
+                    "CHAIN": "B"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1TEH",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 97,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 100,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 111,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 103,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1TEH",
+            "RESIDUES": [
+                {
+                    "AMINO": "GLU",
+                    "ID": 68,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 67,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 46,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 174,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1M4L",
+            "RESIDUES": [
+                {
+                    "AMINO": "GLU",
+                    "ID": 72,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 196,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 69,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1UAQ",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 91,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 94,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 62,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1UAQ",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 91,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 94,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 62,
+                    "CHAIN": "B"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "3NOS",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 99,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 99,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 94,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 94,
+                    "CHAIN": "B"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1NW9",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 303,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 300,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 320,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 327,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1MRO",
+            "RESIDUES": [
+                {
+                    "AMINO": "ARG",
+                    "ID": 216,
+                    "CHAIN": "D"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 218,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 218,
+                    "CHAIN": "D"
+                },
+                {
+                    "AMINO": "ARG",
+                    "ID": 216,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1ONW",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 70,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 285,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 68,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 230,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 201,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1ONW",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 70,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 285,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 68,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 201,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 230,
+                    "CHAIN": "B"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1ZIO",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 150,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 130,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 133,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 153,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1ZNB",
+            "RESIDUES": [
+                {
+                    "AMINO": "ASP",
+                    "ID": 103,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "ASN",
+                    "ID": 55,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 69,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 101,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 162,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 99,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 223,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 181,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1ZNB",
+            "RESIDUES": [
+                {
+                    "AMINO": "HIS",
+                    "ID": 101,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 162,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 99,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 103,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 223,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 181,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 69,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "ASN",
+                    "ID": 55,
+                    "CHAIN": "B"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "2A5H",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 377,
+                    "CHAIN": "C"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 268,
+                    "CHAIN": "D"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 380,
+                    "CHAIN": "C"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 375,
+                    "CHAIN": "C"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "2A5H",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 268,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 380,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 375,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 377,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "2A5H",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 377,
+                    "CHAIN": "D"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 268,
+                    "CHAIN": "C"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 380,
+                    "CHAIN": "D"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 375,
+                    "CHAIN": "D"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "2A5H",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 375,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 380,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 268,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 377,
+                    "CHAIN": "B"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "4KBP",
+            "RESIDUES": [
+                {
+                    "AMINO": "ASP",
+                    "ID": 164,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 135,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "TYR",
+                    "ID": 167,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 325,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 286,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "ASN",
+                    "ID": 201,
+                    "CHAIN": "B"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 323,
+                    "CHAIN": "B"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "4KBP",
+            "RESIDUES": [
+                {
+                    "AMINO": "ASP",
+                    "ID": 135,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "TYR",
+                    "ID": 167,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 164,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 325,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "ASN",
+                    "ID": 201,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 323,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 286,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "4KBP",
+            "RESIDUES": [
+                {
+                    "AMINO": "ASP",
+                    "ID": 164,
+                    "CHAIN": "C"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 323,
+                    "CHAIN": "C"
+                },
+                {
+                    "AMINO": "ASN",
+                    "ID": 201,
+                    "CHAIN": "C"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 286,
+                    "CHAIN": "C"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 325,
+                    "CHAIN": "C"
+                },
+                {
+                    "AMINO": "TYR",
+                    "ID": 167,
+                    "CHAIN": "C"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 135,
+                    "CHAIN": "C"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "4KBP",
+            "RESIDUES": [
+                {
+                    "AMINO": "TYR",
+                    "ID": 167,
+                    "CHAIN": "D"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 164,
+                    "CHAIN": "D"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 325,
+                    "CHAIN": "D"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 135,
+                    "CHAIN": "D"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 286,
+                    "CHAIN": "D"
+                },
+                {
+                    "AMINO": "HIS",
+                    "ID": 323,
+                    "CHAIN": "D"
+                },
+                {
+                    "AMINO": "ASN",
+                    "ID": 201,
+                    "CHAIN": "D"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "1YT3",
+            "RESIDUES": [
+                {
+                    "AMINO": "GLU",
+                    "ID": 30,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 155,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 28,
+                    "CHAIN": "A"
+                },
+                {
+                    "AMINO": "ASP",
+                    "ID": 85,
+                    "CHAIN": "A"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "4XB6",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 266,
+                    "CHAIN": "H"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 244,
+                    "CHAIN": "H"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 241,
+                    "CHAIN": "H"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 272,
+                    "CHAIN": "H"
+                }
+            ]
+        },
+        {
+            "REFERENCE_PDB": "4XB6",
+            "RESIDUES": [
+                {
+                    "AMINO": "CYS",
+                    "ID": 244,
+                    "CHAIN": "D"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 272,
+                    "CHAIN": "D"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 266,
+                    "CHAIN": "D"
+                },
+                {
+                    "AMINO": "CYS",
+                    "ID": 241,
+                    "CHAIN": "D"
+                }
+            ]
+        }
+    ]
+}
