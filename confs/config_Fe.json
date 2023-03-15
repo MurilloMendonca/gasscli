@@ -1,5 +1,5 @@
 {
-    "DEFAULT_CACHE_FOLDER": "cache/",
+    "DEFAULT_CACHE_FOLDER": "/home/username/.gasscli/cache/",
     "DEFAULT_RESULT_FILE": "result.txt",
     "TARGET_PDB": "5CNV",
     "REFERENCE_ATOM": "CA",

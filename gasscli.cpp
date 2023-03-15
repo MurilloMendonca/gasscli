@@ -19,6 +19,10 @@
 #include <boost/program_options.hpp>
 #include <curl/curl.h>
 #include "json.hpp"
+#include <boost/thread/thread.hpp>
+#include <boost/asio/thread_pool.hpp>
+#include <boost/asio.hpp>
+#include <functional>
 
 using namespace boost::program_options;
 using namespace std;
@@ -485,17 +489,25 @@ void run(site temp, Repositorio rep, string outputFilePath){
     }
 }
 
-void run(vector<site> temps, Repositorio rep, string outputFilePath, GASS::Parameters param){
-    std::set<Individuo> results;
+void run(vector<site> temps, Repositorio rep, string outputFilePath, GASS::Parameters param, int nThreads){
+    vector<std::set<Individuo>> results (temps.size());
     ofstream ofs(outputFilePath);
+    boost::asio::thread_pool pool(nThreads);
+    auto task = [&] (int i) {
+        GASS::runOneToOne(&temps[i], &rep, &results[i], param);
+    };
+    for(int i=0;i<temps.size();i++){
+        boost::asio::post(pool, std::bind(task, i));
+    }
+    pool.join();
+        
     int contador=1;
-    for(site temp:temps){
-        GASS::runOneToOne(&temp, &rep, &results, param);
         
-        
+    for(int j=0;j<temps.size();j++){
+        site temp = temps[j];
         int tam_sitiof = temp.residuos.size();
         int i=0;
-        for (Individuo ind:results)
+        for (Individuo ind:results[j])
         {
             ofs << contador << "\t" << i << "\t";
             ofs << std::setprecision(3) << ind.getFitness() << "\t";
@@ -534,8 +546,9 @@ void run(vector<site> temps, Repositorio rep, string outputFilePath, GASS::Param
             i++;
         }
         contador++;
-        results.clear();
     }
+    results.clear();
+    
     ofs.close();
 }
 
@@ -612,6 +625,8 @@ int main(int argc, char* argv[]){
         ("target_pdb,t", value<string>(), "set target pdb")
         ("reference_atom", value<string>(), "set reference atom")
         ("output,o", value<string>(), "set output file, default is output.txt")
+        ("config_file", value<string>(), "set the path to the config json file to be used")
+        ("num_threads,j", value<int>(), "set the number of threads to be used, default is 1")
     ;
     options_description download_opt("download options");
     download_opt.add_options()
@@ -632,23 +647,18 @@ int main(int argc, char* argv[]){
         ("pdb_file_path,f", value<string>(), "set the path to the .pdb file to be prepared")
         ("force", "force prepare even if .dat file already exists")
     ;
-    options_description runconf_opt("run_config options");
-    runconf_opt.add_options()
-        ("help,h", "produce help message")
-        ("config_file,c", value<string>(), "set the path to the config json file to be used")
-
-    ;
 
     if(argc>0 && string(argv[1])=="run"){
         
-        
+        string configFilePath = "";
         string referencePdb = "";
         string templateSite = "";
         string mutations = "";
         string targetPdb = "";
         string referenceAtom = "CA";
-        string cacheFolder = appFolder + "cache/";
-        string outputFilePath = "output.txt";
+        string cacheFolder = "";
+        string outputFilePath = "";
+        int numThreads = 1;
 
         variables_map vm;
         store(parse_command_line(argc, argv, run_opt), vm);
@@ -657,6 +667,12 @@ int main(int argc, char* argv[]){
         if (vm.count("help")) {
             cout << run_opt << "\n";
             return 1;
+        }
+        if(vm.count("num_threads")){
+            numThreads = vm["num_threads"].as<int>();
+        }
+        if(vm.count("config_file")){
+            configFilePath = vm["config_file"].as<string>();
         }
         if(vm.count("cache")){
             cacheFolder = vm["cache"].as<string>();
@@ -683,20 +699,39 @@ int main(int argc, char* argv[]){
             outputFilePath = vm["output"].as<string>();
         }
 
-        if(referencePdb == "" || templateSite == "" || targetPdb == ""){
+        if(configFilePath == "" && (referencePdb == "" || templateSite == "" || targetPdb == "")){
             cout << "Missing arguments" << endl;
             cout << run_opt << "\n";
             return 1;
         }
 
+        if(configFilePath == ""){
+            cout << "No config file specified" << endl;
+            cout << "Using default config file" << endl;
+            configFilePath = appFolder + "config.json";
+            cout<<configFilePath<<"\n";
+        }
+        if(cacheFolder == ""){
+            cacheFolder = getValueFromConfig(configFilePath, "DEFAULT_CACHE_FOLDER");
+        }
         if(!fs::exists(cacheFolder)){
             fs::create_directory(cacheFolder);
         }
-        if(!fs::exists(cacheFolder+referencePdb)){
-            fs::create_directory(cacheFolder+referencePdb);
-            downloadPdb(referencePdb, cacheFolder+referencePdb+"/protein.pdb");
-            generateTxt(cacheFolder+referencePdb+"/protein.pdb",cacheFolder+referencePdb+"/protein.txt",referenceAtom);
-            generateDat(cacheFolder+referencePdb+"/protein.txt",cacheFolder+referencePdb+"/protein.dat");
+        vector<site> templates;
+        if(referencePdb == ""){
+            templates =readTemplates(configFilePath, cacheFolder);
+        }
+        else{
+            if(!fs::exists(cacheFolder+referencePdb)){
+                fs::create_directory(cacheFolder+referencePdb);
+                downloadPdb(referencePdb, cacheFolder+referencePdb+"/protein.pdb");
+                generateTxt(cacheFolder+referencePdb+"/protein.pdb",cacheFolder+referencePdb+"/protein.txt",referenceAtom);
+                generateDat(cacheFolder+referencePdb+"/protein.txt",cacheFolder+referencePdb+"/protein.dat");
+            }
+            templates.push_back(readTemplate(templateSite, cacheFolder+referencePdb+"/protein.dat"));
+        }
+        if (targetPdb == ""){
+            targetPdb = getValueFromConfig(configFilePath, "TARGET_PDB");
         }
         if(!fs::exists(cacheFolder+targetPdb)){
             fs::create_directory(cacheFolder+targetPdb);
@@ -705,17 +740,25 @@ int main(int argc, char* argv[]){
             generateDat(cacheFolder+targetPdb+"/protein.txt",cacheFolder+targetPdb+"/protein.dat");
         }
         
-        site temp = readTemplate(templateSite, cacheFolder+referencePdb+"/protein.dat");
         if(mutations!="")
-            readMutations(mutations, temp);
+            readMutations(mutations, templates[0]);
     
         //printTemplateInfo(temp);
 
         Repositorio repositorio;
         repositorio.readRepository(cacheFolder+targetPdb+"/protein.dat");
 
+        if(outputFilePath == ""){
+            if(configFilePath != "")
+                outputFilePath = getValueFromConfig(configFilePath, "DEFAULT_RESULT_FILE");
+            else
+                outputFilePath = "output.txt";
+        }
         //printTargetInfo(repositorio);
-        run(temp,repositorio,outputFilePath);
+        if(templates.size() == 1)
+            run(templates[0],repositorio,outputFilePath);
+        else
+            ::run(templates,repositorio,outputFilePath, getDefaultParameters(configFilePath), numThreads);
     }
     else if(argc>0 && string(argv[1])=="download"){
         string cacheFolder = appFolder + "cache/";
@@ -850,48 +893,6 @@ int main(int argc, char* argv[]){
             }
         }
 
-    }
-    else if(argc>0 && string(argv[1])=="run_config"){
-        string configFilePath = "";
-        variables_map vm;
-        store(parse_command_line(argc, argv, runconf_opt), vm);
-        notify(vm);
-        if(vm.count("config_file")){
-            configFilePath = vm["config_file"].as<string>();
-        }
-        if(vm.count("help")){
-            cout << runconf_opt << "\n";
-            return 1;
-        }
-        if(configFilePath == ""){
-            cout << "No config file specified" << endl;
-            cout << "Using default config file" << endl;
-            configFilePath = appFolder + "config.json";
-            cout<<configFilePath<<"\n";
-        }
-        string cacheFolder = getValueFromConfig(configFilePath, "DEFAULT_CACHE_FOLDER");
-        if(!fs::exists(cacheFolder)){
-            fs::create_directory(cacheFolder);
-        }
-        
-        cout<<"Using cache folder: "<<cacheFolder<<"\n";
-        vector<site> templates = readTemplates(configFilePath, cacheFolder);
-        //printTemplateInfo(templates[0]);
-
-
-        string targetPdb = getValueFromConfig(configFilePath, "TARGET_PDB");
-        if(!fs::exists(cacheFolder+targetPdb)){
-            fs::create_directory(cacheFolder+targetPdb);
-            downloadPdb(targetPdb, cacheFolder+targetPdb+"/protein.pdb");
-            generateTxt(cacheFolder+targetPdb+"/protein.pdb",cacheFolder+targetPdb+"/protein.txt","CA");
-            generateDat(cacheFolder+targetPdb+"/protein.txt",cacheFolder+targetPdb+"/protein.dat");
-        }
-        Repositorio repositorio;
-        repositorio.readRepository(cacheFolder+targetPdb+"/protein.dat");
-
-        //printTargetInfo(repositorio);
-        string outputFilePath = getValueFromConfig(configFilePath, "DEFAULT_RESULT_FILE");
-        ::run(templates,repositorio,outputFilePath, getDefaultParameters(configFilePath));
     }
     else{
         cout << "Usage: gasscli [instruction] [options]\n\n"
